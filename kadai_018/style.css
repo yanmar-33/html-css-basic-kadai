@@ -47,7 +47,6 @@
     margin-top: 500px;
 }
 #bottom {
-    display: flex;
     width: 800px;
     height: 300px;
     background-color: #87ceeb;
@@ -62,15 +61,13 @@
     width: 400px;
     height: 100px;
     position: relative;
-    top: 100px;
-    left: -200px;
+    left: 200px;
     background-color: #e5dcf0;
 }
 #bottom-child03 {
     width: 400px;
     height: 100px;
     position: relative;
-    top: 200px;
-    left: -400px;
+    left: 400px;
     background-color: #e5dcf0;
 }
