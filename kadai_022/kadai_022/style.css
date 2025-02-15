@@ -1,0 +1,83 @@
+h1, p, body {
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    background-color: red;
+}
+
+a, p {
+    font-size: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+
+#parent {  
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+
+.contents {
+    border: 3px solid rgb(238, 204, 204);
+    flex-basis: 25%;
+    padding: 10px 15px 10px 15px;
+    margin: 20px 0 20px 0;
+}
+
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122);
+}
+h2::before {
+    content: "⚫︎";
+    color: rgb(239, 111, 139);
+}
+p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+}
+
+img {
+    margin: 10px 0 10px 0;
+    width: 70%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(244, 79, 79);
+}
+
+a {
+    color: rgb(255, 255, 255);
+}
+
+a:visited {
+    color: rgb(193, 234, 251);
+}
+
+a:hover {
+    color: rgb(245, 178, 168);
+}
+
+@media screen and (max-width: 768px){
+        h2 {
+            font-size: 30px;
+        }
+        p {
+            font-size: 25px;
+        }
+        #parent {
+            flex-direction: column;
+        }
+}
