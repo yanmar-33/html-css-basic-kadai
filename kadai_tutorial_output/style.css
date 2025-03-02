@@ -1210,3 +1210,10 @@ footer {
     width: 500px;
     height: auto;
 }
+.modal-close {
+    position: absolute;
+    font-size: 30px;
+    top: -10px;
+    right: 0px;
+    color: #ffffff;
+}
