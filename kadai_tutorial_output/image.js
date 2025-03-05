@@ -4,6 +4,8 @@ const modalContents = document.querySelector('.js-modal-contents');
 const modalClose = document.querySelectorAll('.js-modal-close');//querySelectorAllは指定した要素を全て配列で取得するメソッドです
 const modalOpen = document.querySelectorAll('.js-modal-open');
 const body = document.body;//bodyを取得
+const accordionHeaders = document.querySelectorAll(".js-accordion-header");
+const accordionContents = document.querySelectorAll(".js-accordion-contents");
 
 //forEachは配列の要素を一つずつ取り出して処理を行うメソッドです
 modalOpen.forEach(item => {//item（名前はなんでも良い）は引数と呼ばれるもので、配列の要素を一つずつ取り出して処理を行う際に使います
@@ -32,3 +34,13 @@ modalClose.forEach(button => {//配列の要素を一つずつ取り出して処
     });
 });
 
+//クリックしたらaccordion
+accordionHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+        const parent = header.closest(".js-accordion-item"); // 親の .js-accordion-item を取得
+        const content = parent.querySelector(".js-accordion-contents"); // その中の .js-accordion-contents を取得
+
+        // 開閉の切り替え
+        content.classList.toggle("is-show");
+    });
+});
