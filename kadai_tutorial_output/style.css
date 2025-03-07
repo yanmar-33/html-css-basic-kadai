@@ -852,13 +852,12 @@ footer {
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 30;
+        z-index: -10;
     }
     .accordion-item {
         position: relative;
         top: 0;
         left: 0;
-        z-index: 31;
         margin-top: 80px;
     }
     .vision-box > span > h4 {
@@ -873,6 +872,7 @@ footer {
     .accordion-contents > p {
         margin: 10px 0 0 0;
     }
+
     /* 会社概要 */
     #company {
         margin: 0 20px 0 20px;
@@ -1226,9 +1226,15 @@ footer {
 .accordion-header {
     cursor: pointer;
 }
+
 .accordion-contents {
-    display: none; /* 最初は非表示 */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px); /* 上に少し移動 */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
 }
-.accordion-contents.is-show {
-    display: block; /* 表示 */
+.accordion-contents.is-show {max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);display: block; /* 表示 */
 }
