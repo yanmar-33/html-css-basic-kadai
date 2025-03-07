@@ -1196,6 +1196,7 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
+    cursor: pointer;
 }
 .modal-contents {
     z-index: 100;
@@ -1205,6 +1206,7 @@ footer {
     transform: translate(-50%, -50%);
     width: 500px;
     height: auto;
+    
 }
 .modal-contents img {
     width: 500px;
@@ -1216,6 +1218,11 @@ footer {
     top: -10px;
     right: 0px;
     color: #ffffff;
+    cursor: pointer;
+    
+}
+.product-photo{
+    cursor: pointer;
 }
 
 /* VISION accordionメニュー */

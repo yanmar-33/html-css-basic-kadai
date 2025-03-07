@@ -1,8 +1,9 @@
 const modal = document.querySelector('.js-modal'); //querySelectorは指定した要素を最初の一つだけ取得するメソッドです
 const modalOverLay = document.querySelector('.js-modal-overLay');
 const modalContents = document.querySelector('.js-modal-contents');
-const modalClose = document.querySelectorAll('.js-modal-close');//querySelectorAllは指定した要素を全て配列で取得するメソッドです
-const modalOpen = document.querySelectorAll('.js-modal-open');
+
+const modalOpen = document.querySelectorAll('.js-modal-open');//querySelectorAllは指定した要素を全て配列で取得するメソッドです
+const modalClose = document.querySelectorAll('.js-modal-close');
 const body = document.body;//bodyを取得
 const accordionHeaders = document.querySelectorAll(".js-accordion-item");
 const accordionContents = document.querySelectorAll(".js-accordion-contents");
