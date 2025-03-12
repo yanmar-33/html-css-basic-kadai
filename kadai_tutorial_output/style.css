@@ -199,13 +199,10 @@ h2 {
 #aboutus > div {
     display: flex;
 }
-/*　画像1　*/
-.culture-img {
-    width: 100%;
-    align-self: flex-start;
-}
+
+
 /* 画像２ */
-.culture-img2 {
+.culture-img4 {
     margin-top: 50px;
     width: 100%;
 }
@@ -216,12 +213,13 @@ h2 {
 /* 番号 */
 .culture-num {
     font-size: 80px;
-    color: #2710d5;
+    color: lightblue;
     margin: 0 20px 0 0;
 }
+
 /* 組織文化英語 */
 .culture-en {
-    color: #2710d5;
+    color: lightblue;
     font-weight: bold;
     font-size: 24px;
     display: block;
@@ -255,6 +253,10 @@ h2 {
     height: 300px;
     margin-bottom: 30px;
     position: relative;
+    transition: 0.3s;
+}
+.vision-box:hover {
+    opacity: 0.7;
 }
 /*　visionbox-img　*/
 .vision-box > img {
@@ -812,11 +814,11 @@ footer {
         padding-right: 20px;
         order: 2;
     }
-    .culture-img {
+    .culture-img1 ,.culture-img2 ,.culture-img3 {
         width: 100%;
         order: 1;
     }
-    .culture-img2 {
+    .culture-img4 {
         width: 100%;
     }
     .culture-num {
@@ -1179,14 +1181,18 @@ footer {
 
 /*  画像を拡大表示 */
 .modal {
-    display: none;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
+    position: fixed; /* ビューポート全体に固定 */
+    width: 100vw; /* ビューポート全幅 */
+    height: 100vh; /* ビューポート全高 */
+    z-index: 1000; /* 他の要素よりも前面に */
+    opacity: 0; /* 完全に透明 */
+    visibility: hidden; /* 非表示状態にし、クリックも無効化 */
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out; /* アニメーション */
 }
 .modal.is-show {
-    display: block;
+    display: block; /* 表示 */
+    opacity: 1; /* 透明度100%で完全に表示 */
+    visibility: visible; /* クリック可能 */
 }
 .modal-overLay{
     position: fixed;
@@ -1197,6 +1203,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
     cursor: pointer;
+    transition: opacity 0.3s ease-out; /* フェードイン/アウト */
 }
 .modal-contents {
     z-index: 100;
@@ -1219,8 +1226,12 @@ footer {
     right: 0px;
     color: #ffffff;
     cursor: pointer;
-    
+    transition: color 0.2s; /* 色変化のアニメーション */
 }
+.modal-close:hover {
+    color: #ff0000; /* マウスオーバー時の色変更 */
+}
+
 .product-photo{
     cursor: pointer;
 }
@@ -1235,13 +1246,57 @@ footer {
 }
 
 .accordion-contents {
+    display: block;
+    padding: 0 30px;
     max-height: 0;
-    overflow: hidden;
+    visibility: hidden;
     opacity: 0;
     transform: translateY(-10px); /* 上に少し移動 */
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out ,visibility 0.3s ease-out;
 }
-.accordion-contents.is-show {max-height: 500px;
+.accordion-contents.is-show {
+    max-height: 9999px;
     opacity: 1;
-    transform: translateY(0);display: block; /* 表示 */
+    visibility: visible;
+    transform: translateY(0); /* 表示 */
+}
+
+
+/* ABOUTO USの画像切り替え */
+/*　画像1.2.3　*/
+.culture-num {
+    cursor: pointer;
+}
+.culture-num:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    color: #2710d5;
+    
+}
+.culture-img1 ,.culture-img2 ,.culture-img3  {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0; 
+}
+.culture-img1.is-show  {
+    width: 100%;
+    position: relative;
+    align-self: center;
+    visibility: visible;
+    opacity: 1;  /* 表示 */
+    transition: 0.5s;
+}
+.culture-img2.is-show ,.culture-img3.is-show {
+    width: 48%;
+    position: relative;
+    align-self: center;
+    visibility: visible;
+    opacity: 1;  /* 表示 */
+    transition: 0.5s;
+}
+
+
+.culture-num.is-show , .culture-en.is-show{
+    color: #2710d5;
+    transition: color 0.3s ease;
 }
